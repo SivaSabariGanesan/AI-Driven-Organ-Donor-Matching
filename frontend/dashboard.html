@@ -1,0 +1,309 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <script src="js/api.js"></script>
+    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: Lexend, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="flex items-center justify-end px-6 py-3">
+          <button id="logoutBtn"
+            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-white border border-[#e92932] text-[#e92932] text-sm font-bold">
+            Logout
+          </button>
+        </div>
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-80">
+            <div class="flex h-full min-h-[700px] flex-col justify-between bg-white p-4">
+              <div class="flex flex-col gap-4">
+                <div class="flex gap-3">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCClOKsgL_HfTScjEHWyLl4azaUdEgZ1qensIR8V63c3mSQ3RHV8HMWX8xcCXK0kAsdSxIRCBLqNrFB1IWAOJjy0urAVqz6BXsRktjjSw5yxZSGg81Cup5imNoBvGjE8mNyDJjvbRDo28NvLqWotPh31o1QSwwJKlD55trvj0mdmz_C4avbNjTecIveu-F38ooEpDpqox2Jvj8uHhq32KPVRgwQjzf-1oPLen8FGTHGi3A5yc5Svw3JWYBPaCGb3SctV5GAhk58_Wuw");'
+                  ></div>
+                  <h1 class="text-[#181111] text-base font-medium leading-normal">Dr. Amelia Harper</h1>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <div class="flex items-center gap-3 px-3 py-2 rounded-full bg-[#f4f0f0]">
+                    <div class="text-[#181111]" data-icon="House" data-size="24px" data-weight="fill">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                        <path
+                          d="M224,115.55V208a16,16,0,0,1-16,16H168a16,16,0,0,1-16-16V168a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v40a16,16,0,0,1-16,16H48a16,16,0,0,1-16-16V115.55a16,16,0,0,1,5.17-11.78l80-75.48.11-.11a16,16,0,0,1,21.53,0,1.14,1.14,0,0,0,.11.11l80,75.48A16,16,0,0,1,224,115.55Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p class="text-[#181111] text-sm font-medium leading-normal">Dashboard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#181111] tracking-light text-[32px] font-bold leading-tight min-w-72">Dashboard</p></div>
+            <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">AI Matches</h2>
+            <div class="p-4" id="aiMatchesSection">
+              <div class="rounded-xl bg-white p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+                <div id="aiMatchesList" class="flex flex-col gap-4"></div>
+              </div>
+            </div>
+            <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">What would you like to do?</h2>
+            <div class="p-4 flex gap-4">
+              <button onclick="window.location.href='organ.html'" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[#e92932] text-white text-sm font-bold">Donate an Organ</button>
+              <button onclick="window.location.href='request.html'" class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-[#f4f0f0] text-[#181111] text-sm font-bold">Request an Organ</button>
+            </div>
+
+            <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Medical & Donation Chatbot</h2>
+            <div class="p-4">
+              <div class="rounded-xl bg-white p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)] flex flex-col gap-3">
+                <div id="chatLog" class="h-56 overflow-y-auto border border-[#f4f0f0] rounded p-3 text-sm text-[#181111]"></div>
+                <div class="flex gap-2">
+                  <input id="chatInput" class="form-input flex-1 rounded-xl h-10 bg-[#f4f0f0] px-3" placeholder="Ask about organ donation or general medical guidance..." />
+                  <button id="chatSend" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e92932] text-white text-sm font-bold">Send</button>
+                </div>
+                <p class="text-[#886364] text-xs">This chatbot provides general info only and is not a substitute for professional medical advice.</p>
+              </div>
+            </div>
+
+            <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Recent Requests</h2>
+            <div class="p-4">
+              <div class="rounded-xl bg-white p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+                <div class="flex justify-between items-center pb-3">
+                  <p class="text-[#886364] text-sm">Requests from all users</p>
+                  <button id="refreshRequests" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-[#f4f0f0] text-[#181111] text-sm font-bold">Refresh</button>
+                </div>
+                <table class="min-w-full text-left">
+                  <thead>
+                    <tr class="text-[#886364] text-sm">
+                      <th class="py-2 pr-4">Requester</th>
+                      <th class="py-2 pr-4">Email</th>
+                      <th class="py-2 pr-4">Phone</th>
+                      <th class="py-2 pr-4">Address</th>
+                      <th class="py-2 pr-4">Organ</th>
+                      <th class="py-2 pr-4">Blood Group</th>
+                      <th class="py-2 pr-4">Status</th>
+                      <th class="py-2 pr-4">Created</th>
+                    </tr>
+                  </thead>
+                  <tbody id="allReqRows" class="text-[#181111] text-sm"></tbody>
+                </table>
+                <p id="allReqEmpty" class="text-[#886364] text-sm hidden">No requests available.</p>
+              </div>
+            </div>
+
+            <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Recent Donors</h2>
+            <div class="p-4">
+              <div class="rounded-xl bg-white p-4 shadow-[0_0_4px_rgba(0,0,0,0.1)]">
+                <div class="flex justify-between items-center pb-3">
+                  <p class="text-[#886364] text-sm">Organs donated on the platform</p>
+                  <button id="refreshDonors" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-9 px-4 bg-[#f4f0f0] text-[#181111] text-sm font-bold">Refresh</button>
+                </div>
+                <table class="min-w-full text-left">
+                  <thead>
+                    <tr class="text-[#886364] text-sm">
+                      <th class="py-2 pr-4">Donor</th>
+                      <th class="py-2 pr-4">Email</th>
+                      <th class="py-2 pr-4">Phone</th>
+                      <th class="py-2 pr-4">Address</th>
+                      <th class="py-2 pr-4">Organ</th>
+                      <th class="py-2 pr-4">Blood Group</th>
+                      <th class="py-2 pr-4">Status</th>
+                      <th class="py-2 pr-4">Created</th>
+                    </tr>
+                  </thead>
+                  <tbody id="donorRows" class="text-[#181111] text-sm"></tbody>
+                </table>
+                <p id="donorEmpty" class="text-[#886364] text-sm hidden">No donor entries yet.</p>
+              </div>
+            </div>
+            <h2 class="text-[#181111] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">AI Predictions</h2>
+            <div class="p-4">
+              <div class="flex items-stretch justify-between gap-4 rounded-xl">
+                <div class="flex flex-col gap-1 flex-[2_2_0px]">
+                  <p class="text-[#181111] text-base font-bold leading-tight">Predicted Match Probability</p>
+                  <p class="text-[#886364] text-sm font-normal leading-normal">
+                    Based on your profile and current donor pool, the AI predicts a 65% chance of finding a match within the next 3 months.
+                  </p>
+                </div>
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHCFAnPbAGFB_FgUUlkeXhulPfmIPnSqz4LOj0KpldbNRS8GFhOF9I8FXwjKzStwlXoZDKQJ1XhR3TglSzKZqULeNMPUlm3tSpehXS58gyWZxoI1Sidl1UCfDIbme1l0UChxFnRFxUK8h40_7fvb3aoK7ivJWXHsm7HDP-z5U5NRdJzsgndKmNtHcE5RFm8HvgSwfDFO-z6-Cqvf_vfcTemqNAMlLEJs9pGIHZ9TSOXv5_z_375SS30tZBCtc-FeVvpelq1xUgg4zn");'
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    API.requireAuth('login.html');
+    (async function loadProfile(){
+      try {
+        const me = await API.apiFetch('/api/auth/me', { headers: { ...API.authHeader() } });
+        // Replace the sidebar user name with the actual name
+        const nameNodes = Array.from(document.querySelectorAll('h1')).filter(n => n.textContent.includes('Dr.') || n.textContent.trim().length > 0);
+        if (nameNodes[0]) nameNodes[0].textContent = me.name;
+      } catch (e) { console.warn(e); }
+    })();
+    const logoutBtn = document.getElementById('logoutBtn');
+    if (logoutBtn) logoutBtn.addEventListener('click', () => { API.clearToken(); window.location.href='login.html';});
+
+    async function loadAllRequests(){
+      try {
+        const items = await API.apiFetch('/api/requests', { headers: { ...API.authHeader() } });
+        const tbody = document.getElementById('allReqRows');
+        tbody.innerHTML = '';
+        if (!items || !items.length) {
+          document.getElementById('allReqEmpty').classList.remove('hidden');
+          return;
+        }
+        for (const r of items) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="py-2 pr-4">${r.requester?.name || '-'}</td>
+            <td class="py-2 pr-4">${r.requester?.email || '-'}</td>
+            <td class="py-2 pr-4">${r.requester?.phone || '-'}</td>
+            <td class="py-2 pr-4">${r.requester?.address || '-'}</td>
+            <td class="py-2 pr-4">${r.organ?.type || r.requestedType || '-'}</td>
+            <td class="py-2 pr-4">${r.organ?.bloodGroup || r.requestedBloodGroup || '-'}</td>
+            <td class="py-2 pr-4">${r.status}</td>
+            <td class="py-2 pr-4">${new Date(r.createdAt).toLocaleString()}</td>
+          `;
+          tbody.appendChild(tr);
+        }
+      } catch (e) { console.warn(e); }
+    }
+    loadAllRequests();
+    const refreshBtn = document.getElementById('refreshRequests');
+    if (refreshBtn) refreshBtn.addEventListener('click', loadAllRequests);
+
+    async function loadDonors(){
+      try {
+        const items = await API.apiFetch('/api/organs', { headers: { ...API.authHeader() } });
+        const tbody = document.getElementById('donorRows');
+        tbody.innerHTML = '';
+        if (!items || !items.length) {
+          document.getElementById('donorEmpty').classList.remove('hidden');
+          return;
+        }
+        for (const o of items) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="py-2 pr-4">${o.donor?.name || '-'}</td>
+            <td class="py-2 pr-4">${o.donor?.email || '-'}</td>
+            <td class="py-2 pr-4">${o.donor?.phone || '-'}</td>
+            <td class="py-2 pr-4">${o.donor?.address || '-'}</td>
+            <td class="py-2 pr-4">${o.type}</td>
+            <td class="py-2 pr-4">${o.bloodGroup}</td>
+            <td class="py-2 pr-4">${o.availabilityStatus}</td>
+            <td class="py-2 pr-4">${new Date(o.createdAt).toLocaleString()}</td>
+          `;
+          tbody.appendChild(tr);
+        }
+      } catch (e) { console.warn(e); }
+    }
+    loadDonors();
+    const refreshDonors = document.getElementById('refreshDonors');
+    if (refreshDonors) refreshDonors.addEventListener('click', loadDonors);
+
+    async function loadAIMatches() {
+      try {
+        const matches = await API.apiFetch('/api/requests/matches', { headers: { ...API.authHeader() } });
+        const list = document.getElementById('aiMatchesList');
+        list.innerHTML = '';
+        if (!matches.length) {
+          list.innerHTML = '<p class="text-[#886364] text-sm">No requests to match.</p>';
+          return;
+        }
+        for (const m of matches) {
+          const { request, match } = m;
+          const div = document.createElement('div');
+          div.className = 'flex flex-col md:flex-row md:items-center gap-2 border-b pb-3';
+          div.innerHTML = `
+            <div class="flex-1">
+              <span class="font-bold">Request:</span> ${request.requestedType || '-'} (${request.requestedBloodGroup || '-'})
+              <span class="ml-2 text-xs text-[#886364]">by ${request.requester?.name || 'Unknown'}</span>
+            </div>
+            <div class="flex-1">
+              ${match ? `<span class='inline-block px-3 py-1 rounded-full bg-green-100 text-green-700 font-bold mr-2'>Match Found</span>
+                <span class='font-medium'>Donor: ${match.donor?.name || 'Anonymous'} | ${match.type} (${match.bloodGroup})</span>
+                <span class='block text-xs text-[#886364]'>Contact: ${match.donor?.phone || '-'} | ${match.donor?.email || '-'}</span>`
+            : `<span class='inline-block px-3 py-1 rounded-full bg-red-100 text-red-700 font-bold'>No Match</span>`}
+            </div>
+          `;
+          list.appendChild(div);
+        }
+      } catch (e) {
+        document.getElementById('aiMatchesList').innerHTML = `<p class='text-red-600'>Failed to load matches: ${e.message}</p>`;
+      }
+    }
+    loadAIMatches();
+
+    // Chatbot
+    const chatLog = document.getElementById('chatLog');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    async function sendChat(){
+      const text = chatInput.value.trim();
+      if (!text) return;
+      const userBubble = document.createElement('div');
+      userBubble.className = 'mb-2 rounded px-3 py-2 bg-[#eef6ff] text-[#181111] border border-[#3b82f6]';
+      userBubble.textContent = 'You: ' + text;
+      chatLog.appendChild(userBubble);
+      chatInput.value='';
+      chatLog.scrollTop = chatLog.scrollHeight;
+      try {
+        const res = await API.apiFetch('/api/chat', { method: 'POST', headers: { ...API.authHeader() }, body: JSON.stringify({ message: text }) });
+        const botBubble = document.createElement('div');
+        botBubble.className = 'mb-2 rounded px-3 py-2 bg-[#fff1f1] text-[#181111] border border-[#e92932]';
+        botBubble.textContent = 'Bot: ' + res.reply;
+        chatLog.appendChild(botBubble);
+        chatLog.scrollTop = chatLog.scrollHeight;
+      } catch (e) {
+        const err = document.createElement('div');
+        err.className = 'mb-2 text-red-600';
+        err.textContent = 'Error: ' + e.message;
+        chatLog.appendChild(err);
+      }
+    }
+    if (chatSend) chatSend.addEventListener('click', sendChat);
+    if (chatInput) chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendChat(); });
+
+    async function loadChatHistory() {
+      try {
+        const history = await API.apiFetch('/api/chat/history', { headers: { ...API.authHeader() } });
+        const list = document.getElementById('chatHistoryList');
+        list.innerHTML = '';
+        if (!history.length) {
+          list.innerHTML = '<p class="text-[#886364] text-sm">No chat history yet.</p>';
+          return;
+        }
+        for (const entry of history.slice(-10)) { // show last 10
+          const div = document.createElement('div');
+          div.className = `flex items-center gap-2 ${entry.role === 'user' ? 'justify-start' : 'justify-end'}`;
+          div.innerHTML = `
+            <span class="px-3 py-1 rounded-full ${entry.role === 'user' ? 'bg-[#eef6ff] text-[#181111] border border-[#3b82f6]' : 'bg-[#fff1f1] text-[#181111] border border-[#e92932]'}">
+              <b>${entry.role === 'user' ? 'You' : 'Bot'}:</b> ${entry.message}
+            </span>
+            <span class="text-xs text-[#886364]">${new Date(entry.timestamp).toLocaleString()}</span>
+          `;
+          list.appendChild(div);
+        }
+      } catch (e) {
+        document.getElementById('chatHistoryList').innerHTML = `<p class='text-red-600'>Failed to load chat history: ${e.message}</p>`;
+      }
+    }
+    loadChatHistory();
+  </script>
+</html>

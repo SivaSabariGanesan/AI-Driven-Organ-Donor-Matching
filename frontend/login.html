@@ -1,0 +1,171 @@
+<html> 
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+
+    <title>Stitch Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  </head>
+  <body>
+    <script src="js/api.js"></script>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
+      style='font-family: Lexend, "Noto Sans", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <!-- Header -->
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f0f0] px-10 py-3"
+        >
+          <div class="flex items-center gap-4 text-[#181111]">
+            <div class="size-4">
+              <!-- Logo SVG -->
+              <svg
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.8261 30.5736C16.7203 29.8826 20.2244 29.4783 24 29.4783C27.7756 29.4783 31.2797 29.8826 34.1739 30.5736C36.9144 31.2278 39.9967 32.7669 41.3563 33.8352L24.8486 7.36089C24.4571 6.73303 23.5429 6.73303 23.1514 7.36089L6.64374 33.8352C8.00331 32.7669 11.0856 31.2278 13.8261 30.5736Z"
+                  fill="currentColor"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M39.998 35.764C39.9944 35.7463 39.9875 35.7155 39.9748 35.6706C39.9436 35.5601 39.8949 35.4259 39.8346 35.2825C39.8168 35.2403 39.7989 35.1993 39.7813 35.1602C38.5103 34.2887 35.9788 33.0607 33.7095 32.5189C30.9875 31.8691 27.6413 31.4783 24 31.4783C20.3587 31.4783 17.0125 31.8691 14.2905 32.5189C12.0012 33.0654 9.44505 34.3104 8.18538 35.1832C8.17384 35.2075 8.16216 35.233 8.15052 35.2592C8.09919 35.3751 8.05721 35.4886 8.02977 35.589C8.00356 35.6848 8.00039 35.7333 8.00004 35.7388C8.00004 35.739 8 35.7393 8.00004 35.7388C8.00004 35.7641 8.0104 36.0767 8.68485 36.6314C9.34546 37.1746 10.4222 37.7531 11.9291 38.2772C14.9242 39.319 19.1919 40 24 40C28.8081 40 33.0758 39.319 36.0709 38.2772C37.5778 37.7531 38.6545 37.1746 39.3151 36.6314C39.9006 36.1499 39.9857 35.8511 39.998 35.764Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2
+              class="text-[#181111] text-lg font-bold leading-tight tracking-[-0.015em]"
+            >
+              LifeMatch
+            </h2>
+          </div>
+
+          <div class="flex flex-1 justify-end gap-8">
+            <div class="flex items-center gap-9">
+              <a
+                class="text-[#181111] text-sm font-medium leading-normal"
+                href="#"
+                >About</a
+              >
+              <a
+                class="text-[#181111] text-sm font-medium leading-normal"
+                href="D:\Panimalar Project\miniproject\frontend\works.html"
+                >How it Works</a
+              >
+              <a
+                class="text-[#181111] text-sm font-medium leading-normal"
+                href="#"
+                >Resources</a
+              >
+              <a
+                class="text-[#181111] text-sm font-medium leading-normal"
+                href="#"
+                >Contact</a
+              >
+            </div>
+            <div class="flex gap-2">
+              <!-- ✅ Login button now redirects to donor.html -->
+              <a
+                href="donor.html"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#e92932] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Login</span>
+              </a>
+              <button
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#f4f0f0] text-[#181111] text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span class="truncate">Donate</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] flex-1"
+          >
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDu1TDfUNPzjx1o38ffK-GFTp3sm999VlLhneW5Wv76rN8-OP4c5Z9cFTU_8wP-m1I0ZE_jHCa17BEejQeR93RtvxUW6dg_93ucTqLUNMpcUv6e-xBJc1arERQZMN0j9bCGeHuwBaC17D5Yi6kN2UZKBZBYVMDxO9nrC7sNZU9hsIFDKBGUyNRnHLkK-0cisNnM1ISmaWl2sLsloQFJFxvqUgifkLU49dh296iIk4eTQEjeQUtswexCGGs6vJbIKUOI2V3FtQ0kKU0-");'
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl"
+                    >
+                      Saving Lives. Instantly.
+                    </h1>
+                    <h2
+                      class="text-white text-sm font-normal leading-normal @[480px]:text-base"
+                    >
+                      Our AI-powered platform connects patients with compatible
+                      organ donors in real-time, ensuring swift and efficient
+                      matches.
+                    </h2>
+                  </div>
+                  <div class="flex flex-col md:flex-row gap-6 justify-center w-full">
+                    <div class="flex flex-col gap-3 bg-white/80 rounded-xl p-4 w-full max-w-md">
+                      <p class="text-[#181111] text-base font-bold">Register</p>
+                      <input id="reg_name" placeholder="Full Name" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <input id="reg_email" placeholder="Email" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <input id="reg_phone" placeholder="Phone Number" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <input id="reg_address" placeholder="Address" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <input id="reg_password" type="password" placeholder="Password" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <button id="btn_register" class="flex items-center justify-center rounded-full h-10 px-4 bg-[#e92932] text-white text-sm font-bold">Create account</button>
+                    </div>
+                    <div class="flex flex-col gap-3 bg-white/80 rounded-xl p-4 w-full max-w-md">
+                      <p class="text-[#181111] text-base font-bold">Login</p>
+                      <input id="login_email" placeholder="Email" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <input id="login_password" type="password" placeholder="Password" class="form-input rounded-xl h-10 bg-[#f4f0f0] px-3" />
+                      <button id="btn_login" class="flex items-center justify-center rounded-full h-10 px-4 bg-[#f4f0f0] text-[#181111] text-sm font-bold">Login</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Hero -->
+      </div>
+      <script>
+        // If already logged in, go to dashboard
+        if (API.getToken()) { window.location.href = 'dashboard.html'; }
+        document.getElementById('btn_register').addEventListener('click', async () => {
+          const name = document.getElementById('reg_name').value.trim();
+          const email = document.getElementById('reg_email').value.trim();
+          const phone = document.getElementById('reg_phone').value.trim();
+          const address = document.getElementById('reg_address').value.trim();
+          const password = document.getElementById('reg_password').value;
+          if (!name || !email || !phone || !address || !password) { alert('Please fill all fields'); return; }
+          try {
+            await API.apiFetch('/api/auth/register', { method: 'POST', body: JSON.stringify({ name, email, phone, address, password }) });
+            alert('Registration successful. Please login.');
+          } catch (e) { alert(e.message); }
+        });
+        document.getElementById('btn_login').addEventListener('click', async () => {
+          const email = document.getElementById('login_email').value.trim();
+          const password = document.getElementById('login_password').value;
+          if (!email || !password) { alert('Enter email and password'); return; }
+          try {
+            const data = await API.apiFetch('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password }) });
+            API.setToken(data.token);
+            window.location.href = 'dashboard.html';
+          } catch (e) { alert(e.message); }
+        });
+      </script>
+    </div>
+  </body>
+</html>
