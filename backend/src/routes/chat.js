@@ -6,7 +6,7 @@ import { User } from "../models/User.js";
 const router = Router();
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || "");
-const model = () => genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+const model = () => genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
 router.post("/", authenticate, async (req, res) => {
   try {
